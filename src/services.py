@@ -84,7 +84,7 @@ def investment_bank(year_month: str, transactions: list, threshold: float) -> fl
             date_str = transaction.get("Дата операции", "")
             amount = transaction.get("Сумма операции", 0.0)
             if isinstance(date_str, str) and year_month in date_str:
-                if amount < 0:  # Учитываем только расходы
+                if amount < 0:
                     rounded_amount = round(-amount / threshold) * threshold
                     savings += rounded_amount + amount
         logger.info(f"Сумма в Инвесткопилке за {year_month}: {savings}")

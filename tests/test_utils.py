@@ -4,7 +4,7 @@ from unittest.mock import patch
 
 
 def test_read_transactions():
-    """Тест для чтения транзакций из Excel"""
+    """Тест для чтения транзакций из Excel."""
     with patch("pandas.read_excel") as mock_read_excel:
         mock_data = pd.DataFrame(
             {
